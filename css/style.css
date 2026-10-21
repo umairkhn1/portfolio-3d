@@ -59,9 +59,14 @@ body {
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 22px 40px; mix-blend-mode: difference;
+  padding: 22px 40px;
 }
-.logo { font-family: "Syne", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.04em; }
+.logo { display: flex; align-items: center; gap: 11px; font-family: "Syne", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 0.04em; }
+.logo-img {
+  width: 38px; height: 38px; border-radius: 50%; object-fit: cover; object-position: center top;
+  border: 2px solid rgba(255, 140, 0, 0.45); transition: transform 0.3s, box-shadow 0.3s;
+}
+.logo:hover .logo-img { transform: rotate(6deg) scale(1.08); box-shadow: 0 0 18px rgba(255, 140, 0, 0.45); }
 .logo span { color: var(--accent); }
 .nav { display: flex; gap: 34px; }
 .nav-link { color: var(--text); text-decoration: none; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; position: relative; }
