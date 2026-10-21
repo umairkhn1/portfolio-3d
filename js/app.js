@@ -19,6 +19,9 @@ gsap.set(".hero-name .line", { yPercent: 60 });
 gsap.set(".sidebar", { x: 80 });
 
 const heroTl = gsap.timeline({ delay: 2.1 });
+
+/* portrait 3D entrance: swings in from a rotated depth position */
+heroTl.from(".portrait-tilt", { rotationY: -18, rotationX: 8, autoAlpha: 0, scale: 0.92, duration: 1.5, ease: "power3.out" }, 0.1);
 heroTl
   .to(".hero-name .line", { yPercent: 0, duration: 1.1, stagger: 0.12, ease: "power4.out", autoAlpha: 1 })
   .to(".hero-name, .hero-meta", { autoAlpha: 1, duration: 0.4 }, 0)
