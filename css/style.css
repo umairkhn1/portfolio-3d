@@ -76,7 +76,8 @@ body {
 /* HERO */
 .hero {
   position: relative; min-height: 100vh;
-  display: flex; align-items: stretch; gap: 0; padding: 96px 40px 40px 40px;
+  display: flex; align-items: stretch; gap: 0; padding: 96px 40px 48px 40px;
+  overflow: visible;
 }
 .hero-left { flex: 1.6; position: relative; display: flex; flex-direction: column; justify-content: flex-end; }
 
@@ -91,14 +92,18 @@ body {
 .hero-particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 
 /* PORTRAIT 3D */
-.portrait-stage { perspective: 1100px; position: absolute; top: 40px; left: -10px; right: 40px; bottom: 150px; z-index: 2; }
+.portrait-stage {
+  perspective: 1100px; position: relative; z-index: 2;
+  height: min(58vh, 600px); width: min(94%, 660px);
+  margin: 0 0 8px;
+}
 .portrait-tilt {
   width: 100%; height: 100%; position: relative; transform-style: preserve-3d;
   will-change: transform;
 }
 .portrait {
   width: 100%; height: 100%; object-fit: cover; object-position: top center;
-  border-radius: 20px; filter: contrast(1.05) saturate(0.92);
+  border-radius: 20px; filter: contrast(1.05) saturate(0.92); object-position: center 15%;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
 }
 .portrait-glow {
@@ -127,6 +132,8 @@ body {
   position: relative; z-index: 5;
   font-family: "Syne", sans-serif; font-weight: 800; line-height: 0.94; letter-spacing: -0.01em;
   font-size: clamp(48px, 8.5vw, 124px); text-transform: uppercase;
+  margin-top: clamp(-100px, -7vw, -56px);
+  text-shadow: 0 12px 44px rgba(0, 0, 0, 0.65);
 }
 .hero-name .line { display: block; overflow: hidden; }
 .hero-name .line > span, .hero-name .line { display: block; }
@@ -254,7 +261,8 @@ body {
 @media (max-width: 1100px) {
   .hero { flex-direction: column; padding: 90px 24px 30px; }
   .sidebar { flex: none; width: 100%; margin: 30px 0 0; }
-  .portrait-stage { position: relative; bottom: auto; top: auto; right: auto; height: 64vw; max-height: 560px; margin-bottom: 30px; }
+  .portrait-stage { height: 72vw; max-height: 520px; width: 100%; margin-bottom: 24px; }
+  .hero-name { margin-top: -40px; }
   .float-cards { display: none; }
   .scroll-hint { display: none; }
   .about, .projects, .contact { padding: 80px 24px; }
